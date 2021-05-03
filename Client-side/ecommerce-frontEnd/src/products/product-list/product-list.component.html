@@ -1,0 +1,19 @@
+<div class="parent">
+
+
+    <label style="margin-left: 30px;margin-top: 30px;"><b>Select Category</b></label>
+    <select style="margin-left: 20px;" (change)="getSelectedCategory($event)">
+       <option>All</option>
+       <option *ngFor="let category of categories" [value]="category.categoryName">
+           {{category.categoryName}}
+       </option>
+   </select>
+
+    <div class="product-grid">
+
+
+        <app-product-item *ngFor="let product of products" [product]="product"></app-product-item>
+
+    </div>
+    <!-- <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator> -->
+</div>

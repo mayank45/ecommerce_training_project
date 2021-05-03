@@ -1,0 +1,40 @@
+
+<div class="parent">
+
+    <div class="left-col">
+        <button mat-raised-button color="primary" class="continue-shop" [routerLink]="['/../home']">Continue Shopping</button>
+        
+        <table>
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th></th>
+            </tr>
+
+
+            <tr *ngFor="let items of cartItems">
+                <td>{{items.product_name}}</td>
+                <td>{{items.product_price}}</td>
+                <td><button class="desc" (click)="decreaseQauntity(items)">-</button>
+                &nbsp;<input type="number" value={{items.quantity}} style="width: 45px;">
+            &nbsp;<button class="inc" (click)="increaseQauntity(items)">+</button>
+                </td>   
+            
+            <td><button class="delete" mat-raised-button color="warn" (click)="deleteFromCart(items)">Delete</button></td>
+            </tr>
+        </table>
+
+        <br>
+        <hr>
+        <h3>Total Amount : <b>{{totalSum}}</b></h3>
+
+    </div>
+
+    <div class="right-col">
+      
+        <br>
+        <button mat-raised-button color="primary" class="checkout-btn" (click)="checkout()">CheckOut</button>
+    </div>
+
+</div>

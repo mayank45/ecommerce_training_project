@@ -1,0 +1,72 @@
+.fill-space {
+    flex: 1 1 auto;
+}
+
+.gap {
+    width: 40px;
+}
+
+
+/* box {
+    float: left;
+} */
+
+aside,
+section,
+footer {
+    box-sizing: border-box;
+}
+
+aside {
+    width: 30%;
+    height: 100%;
+    float: left;
+}
+
+section {
+    width: 50%;
+    float: left;
+    /* height: 100px; */
+}
+
+footer {
+    clear: both;
+}
+
+header {
+    height: 100px;
+}
+
+nav>a {
+    padding: 10px;
+    text-decoration: none;
+}
+
+mat-sidenav {
+    width: 300px;
+}
+
+h3 {
+    padding: 10px;
+}
+
+nav>a.active {
+    background-color: black;
+}
+
+.header-row {
+    width: 100%;
+}
+
+.fill-space {
+    flex: 1 1 auto;
+}
+
+loginbox {
+    color: dimgrey;
+    float: center;
+}
+
+mat-toolbar {
+    width: 500px;
+}

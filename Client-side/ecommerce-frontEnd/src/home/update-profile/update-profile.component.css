@@ -1,0 +1,70 @@
+aside,
+section {
+    box-sizing: border-box;
+}
+
+aside {
+    width: 30%;
+    float: left;
+    height: 100%;
+}
+
+section {
+    width: 50%;
+    float: left;
+    /* height: 100px; */
+}
+
+header {
+    height: 100px;
+}
+
+nav>a {
+    padding: 10px;
+    text-decoration: none;
+}
+
+mat-sidenav {
+    width: 300px;
+}
+
+h3 {
+    padding: 10px;
+}
+
+nav>a.active {
+    background-color: black;
+}
+
+.header-row {
+    width: 100%;
+}
+
+.fill-space {
+    flex: 1 1 auto;
+}
+
+mat-card {
+    width: 500px
+}
+
+mat-form-field {
+    padding: 30px;
+    width: 500px;
+}
+
+mat-toolbar {
+    width: max-content;
+}
+
+input {
+    
+    height: 50px;
+    text-size-adjust: 40px;
+    padding: auto;
+}
+
+mat-label {
+    color: black;
+    height: 40px
+}

@@ -1,0 +1,97 @@
+<!-- <mat-toolbar color="primary">
+    <mat-toolbar-row> -->
+<!-- <div class="row between-xs middle-xs header-row"></div>
+    <nav> -->
+<a mat-raised-button (click)="redirectToHome()" color="primary">Go Back</a>
+<!-- <span class="fill-space "></span> -->
+<span class="gap"></span>
+<!-- <button mat-raised-button color="primary" (click)="redirectToRegister()">New User?</button> -->
+<button mat-raised-button [matMenuTriggerFor]="menu" color="primary">New User?</button>
+
+<mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="redirectToRegister()">Register</button>
+</mat-menu>
+<span class="gap"></span>
+<button mat-raised-button [matMenuTriggerFor]="menu2" color="primary">Admin?</button>
+<mat-menu #menu2="matMenu">
+    <button mat-menu-item (click)="redirectToAdminLogin()">Admin login</button>
+</mat-menu>
+
+
+<!-- </nav>
+
+</div> -->
+<!-- </mat-toolbar-row>
+</mat-toolbar> -->
+
+
+<header></header>
+<aside id="leftBar"></aside>
+
+
+<div class="box">
+
+    <section>
+
+
+
+        <aside></aside>
+
+
+        <div class="row center-xs">
+            <div class="box" id="loginbox">
+                <mat-error *ngIf="invalid">Please enter valid Credentials : email and password not matched</mat-error>
+
+                <form [formGroup]="loginForm">
+                    <mat-card>
+                        <mat-card-header>
+                            <mat-card-title>Login</mat-card-title>
+                        </mat-card-header>
+                        <mat-card-content>
+                            <div class="row">
+                                <div class="col-xs">
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>User name</mat-label>
+                                        <input id="sessionmail" autocomplete="off" formControlName="email" matInput type="text">
+                                        <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+                                        <span mat-icon-button matSuffix>
+                    <mat-icon>person</mat-icon>
+                  </span>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs">
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>Enter your password</mat-label>
+                                        <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+                                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </button>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+
+                        </mat-card-content>
+                        <mat-card-actions>
+                            <button [disabled]="loginForm.invalid" mat-raised-button color="accent" type="submit" (click)="login()">Login</button>
+                            <button [disabled]="loginForm.invalid" mat-raised-button type="button" (click)="cancel()">Cancel</button>
+                        </mat-card-actions>
+                    </mat-card>
+                </form>
+            </div>
+
+        </div>
+        <br/>
+        <br/>
+        <a mat-raised-button (click)="goToForgotPassword()" color="primary">Forgot Password</a>
+
+
+
+    </section>
+    <aside id="rightBar"></aside>
+
+    <footer>
+
+    </footer>
+</div>

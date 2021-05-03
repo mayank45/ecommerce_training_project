@@ -1,0 +1,63 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+
+
+
+        <div class="row between-xs middle-xs header-row">
+            <nav>
+
+
+
+
+                <!-- <button mat-icon-button>
+                    <mat-icon (click)="drawer.toggle()">menu</mat-icon>
+                  </button> -->
+
+                <!-- <h3>All</h3> -->
+                <span class="fill-space"></span>
+
+                <!-- <a mat-button routerLink="/home" routerLinkActive="active">Home</a> -->
+                <a mat-button [routerLink]="'/home'" routerLinkActive="active">Home</a>
+                <span></span>
+
+                <a mat-button (click)="goToOrders()">Order&Returns</a>
+
+                <span></span>
+                <a mat-button (click)="goToProfile()" routerLinkActive="active">My Profile</a>
+
+            </nav>
+
+            <span class="fill-space "></span>
+
+            <a mat-button [routerLink]=" '/auth/login' " *ngIf="!flag" routerLinkActive="active">Login </a>
+            <span></span>
+            <a mat-button [routerLink]=" '/auth/login' " *ngIf="flag" (click)="logout()">Logout </a>
+            <span></span>
+            <a matBadgeColor="primary" mat-raised-button [routerLink]=" '/cart/show' " routerLinkActive="active">
+                <mat-icon>shopping_cart</mat-icon>
+                {{cartTotal}}
+            </a>
+
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+
+<!-- side menu code -->
+
+<!-- <mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+
+
+        <a mat-list-item [routerLink]="'/accounts'"> Clothing </a>
+        <a mat-list-item [routerLink]="'/create-account'"> Books</a>
+        <a mat-list-item [routerLink]="'/contacts'"> Electronics </a>
+        <a mat-list-item [routerLink]="'/create-contact'"> Accesories</a>
+        <a mat-list-item [routerLink]="'/activities'"> Footwear </a>
+        <a mat-list-item [routerLink]="'/create-activity'"> Makeup</a>
+        <a mat-list-item (click)="drawer.toggle()" href="" mat-list-item>Close</a>
+
+        <div class="example-sidenav-content">
+        </div>
+    </mat-drawer>
+</mat-drawer-container> -->

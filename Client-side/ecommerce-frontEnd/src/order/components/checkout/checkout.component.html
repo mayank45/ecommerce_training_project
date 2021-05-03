@@ -1,0 +1,32 @@
+<div id="wrapper">
+    <div id="left-col">
+        <h2>Please Confirm Your Billing Address</h2>
+        <br>
+
+        <label>Address : </label>
+        <mat-form-field class="col-5 mt-3 mx-auto">
+            <!-- <fieldset ng-disabled="editFlag"> -->
+            <input [disabled]='!editFlag'  type="text" matInput formControlName="address" class="edit" #newAddress value={{billingAddress}} />
+            <!-- </fieldset> -->
+        </mat-form-field>
+        <br>
+        <label>Mobile Number </label>
+        <mat-form-field class="col-5 mt-3 mx-auto">
+            <!-- <fieldset ng-disabled="editFlag"> -->
+            <input class="edit" [disabled]='true' type="text" matInput formControlName="number" value={{billingMobileNumber}} />
+            <!-- </fieldset> -->
+        </mat-form-field>
+
+        <br>
+
+        <button *ngIf="!editFlag" mat-raised-button color="primary" (click)="EditableFields()">Change billing Details</button>
+        <button *ngIf="editFlag" mat-raised-button color="primary" (click)="updateCustomerBillingDetails(newAddress.value)">Update</button>
+
+    </div>
+
+    <div id="right-col">
+        <h3>Total Amount : {{cartTotal}}</h3>
+        <br>
+        <a mat-raised-button color="primary" class="checkout-btn" (click)="proceedToPayment()">Proceed To Payment</a>
+    </div>
+</div>

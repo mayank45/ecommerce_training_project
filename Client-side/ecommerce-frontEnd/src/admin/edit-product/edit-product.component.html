@@ -1,0 +1,120 @@
+<admin-header></admin-header>
+
+
+<div class="product-form">
+    <h2>Edit Product Details</h2>
+
+    <!-- product img -->
+    <div class="container row">
+        <div class="col-md-12">
+            <div *ngIf=retrievedImage>
+                <img [src]="retrievedImage">
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="container row">
+        <div class="col-md-6">
+            <input type="file" (change)="onFileChanged($event)">
+        </div>
+        <div class="col-md-6">
+            <input type="button" (click)="onUpload()" value="upload">
+        </div>
+    </div>
+    <hr />
+    <div class="container row">
+        <div class="col-md-12">
+            <div *ngIf=message>{{message}}</div>
+        </div>
+    </div>
+    <hr/>
+
+
+    <form [formGroup]="productForm" (ngSubmit)="editProduct()">
+        <div class="row">
+
+            <div class="col-md">
+                <mat-form-field appearance="standard">
+                    <mat-label>Product Id</mat-label>
+                    <input autocomplete="off" formControlName="product_id" matInput type="text">
+
+                </mat-form-field>
+            </div>
+
+            <div class="col-md">
+                <mat-form-field>
+                    <mat-label>Select Category</mat-label>
+                    <mat-select formControlName="category">
+                        <mat-option *ngFor="let category of categories" [value]="category.categoryName">
+                            {{category.categoryName}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+        <!--row ends-->
+
+
+        <div class="row">
+
+            <div class="col">
+
+                <!--Product Name-->
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Product Name</mat-label>
+                    <input autocomplete="off" formControlName="product_name" matInput type="text">
+                    <mat-error  *ngIf="productForm.get('product_name').dirty && productForm.get('product_name').invalid" >
+                        Product Name is a required field
+                      </mat-error>   
+                </mat-form-field>
+            </div>
+
+            <div class="col">
+
+                <button (click)="addCategory()" mat-raised-button color="primary" class="add-category-btn">Add New
+                        Category</button>
+
+            </div>
+
+        </div>
+        <!--row over-->
+
+
+        <!--Description-->
+        <mat-form-field appearance="outline">
+            <mat-label>Product Description</mat-label>
+            <input autocomplete="off" formControlName="description" matInput type="text">
+            <mat-error  *ngIf="productForm.get('description').dirty && productForm.get('description').invalid" >
+                Description is a required field
+              </mat-error>   
+        </mat-form-field>
+
+        <!--Price-->
+        <mat-form-field appearance="outline">
+            <mat-label>Product Price/Piece</mat-label>
+            <input autocomplete="off" formControlName="product_price" matInput type="number">
+            <mat-error  *ngIf="productForm.get('product_price').dirty && productForm.get('product_price').invalid" >
+                Product price cannot be less than 0 or empty
+              </mat-error>   
+            
+        </mat-form-field>
+
+
+        <!--Quantity-->
+        <mat-form-field appearance="outline">
+            <mat-label>Product Quantity</mat-label>
+            <input autocomplete="off" formControlName="total_quantity" matInput type="number">
+            <mat-error  *ngIf="productForm.get('total_quantity').dirty && productForm.get('total_quantity').invalid" >
+                Quantity cannot be less than 0 or empty
+              </mat-error>   
+        </mat-form-field>
+
+
+
+        <button [disabled]="!(productForm.valid && productForm.dirty)" mat-raised-button color="primary" type="submit" class="update-btn">Update Product</button>
+
+    </form>
+
+
+</div>

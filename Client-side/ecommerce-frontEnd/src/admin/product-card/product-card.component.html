@@ -1,0 +1,34 @@
+<mat-card class="product-card">
+
+    <!-- <img src="https://picsum.photos/400"> -->
+    <div class="container row">
+        <div class="col-md-12">
+            <div *ngIf=retrievedImage>
+                <img [src]="retrievedImage">
+            </div>
+            <div *ngIf=!retrievedImage>
+                <img [src]="profile">
+            </div>
+        </div>
+    </div>
+
+    <mat-card-content>
+        <mat-card-title>
+            {{product.product_name}}
+        </mat-card-title>
+        <mat-card-subtitle>
+            {{ product.product_price | currency :'INR'}}
+        </mat-card-subtitle>
+        <p>{{ product.description | slice:0:50 }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+
+        <a mat-raised-button color="primary" [routerLink]="['/../admin/productdetail/'+ product.product_id]">View Detail</a>
+        <button (click)="removeProduct(product.product_id)" mat-raised-button color="primary" class="remove-product">Remove</button>
+
+        <!-- <button (click)="editProduct" mat-raised-button color="primary">Edit</button> -->
+
+
+
+    </mat-card-actions>
+</mat-card>

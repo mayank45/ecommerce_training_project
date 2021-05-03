@@ -1,0 +1,35 @@
+.parent {
+    padding: 10%;
+    width: 60%;
+}
+
+td,
+th {
+    text-align: center;
+    padding: 8px;
+}
+
+.back-button {
+    float: right;
+}
+
+aside,
+section,
+footer {
+    box-sizing: border-box;
+}
+
+aside {
+    /* width: 20%; */
+    float: left;
+}
+
+section {
+    /* width: 60%; */
+    float: left;
+    /* height: 100px; */
+}
+
+footer {
+    clear: both;
+}

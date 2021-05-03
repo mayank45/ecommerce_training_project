@@ -1,0 +1,39 @@
+<admin-header></admin-header>
+<br/>
+
+
+
+<mat-card class="example-card">
+    <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{product_name}} </mat-card-title>
+
+    </mat-card-header>
+    <!-- <img mat-card-image src="https://picsum.photos/400" alt="Product Image"> -->
+    <div class="container row">
+        <div class="col-md-12">
+            <div *ngIf=retrievedImage>
+                <img mat-card-image [src]="retrievedImage" alt="product Image">
+            </div>
+            <div *ngIf=!retrievedImage>
+                <img [src]="profile">
+            </div>
+        </div>
+    </div>
+
+    <mat-card-content>
+        <p>
+            <mat-card>PID : {{product_id}} <br/> </mat-card>
+            <mat-card> Name: {{product_name}} <br/> </mat-card>
+            <mat-card>Description : {{description}} <br/></mat-card>
+            <mat-card>Category : {{category}} </mat-card>
+            <mat-card>Price : {{product_price}} <br/></mat-card>
+            <mat-card>Total Quantity Available : {{total_quantity}} <br/></mat-card>
+
+        </p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="editProduct(product_id)">Edit Product</button>
+
+    </mat-card-actions>
+</mat-card>

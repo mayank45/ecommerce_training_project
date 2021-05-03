@@ -1,0 +1,47 @@
+
+.product-form{
+    width: 70%;
+    text-align: center;
+    padding:5%;
+}
+
+h2 {
+    text-align: center;
+}
+
+form {
+    margin-top: 100px;
+}
+.mat-form-field{
+    width: 100%;
+    margin-left:40px;
+}
+
+.mat-raised-button {
+    float: right;
+    width: 200px;
+    margin-right:100px;
+}
+
+
+
+aside,
+section,
+footer {
+    box-sizing: border-box;
+}
+
+aside {
+    /* width: 20%; */
+    float: left;
+}
+
+section {
+    /* width: 60%; */
+    float: left;
+    /* height: 100px; */
+}
+
+footer {
+    clear: both;
+}

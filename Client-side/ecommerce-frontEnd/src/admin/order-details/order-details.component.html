@@ -1,0 +1,45 @@
+<admin-header> </admin-header>
+
+<div class="parent">
+
+    <h2>Product Details</h2>
+    <br><br>
+    <h3>Customer Id : {{customerId}}</h3>
+    <h3>Order Id : {{orderId}}</h3>
+
+
+    <table>
+        <tr>
+            <th>Sno.</th>
+            <th>Product Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Sub Total</th>
+        </tr>
+        <tr *ngFor="let product of products;index as i">
+            <td>{{ i+1 }}</td>
+            <td>{{ product.name}}</td>
+            <td>{{ product.price }}</td>
+            <td>{{product.qty}}</td>
+            <td>{{product.price * product.qty}}</td>
+        </tr>
+    </table>
+    <hr>
+    <h3>Total Sum : {{totalSum}}</h3>
+
+    <p>Order Status : {{orderStatus}}</p>
+
+    <button mat-raised-button color="primary" class="back-button" [routerLink]=" '/../admin/orderlist' ">Back</button>
+
+    <button mat-raised-button color="primary" (click)="openDialog()">Approve order</button>
+
+
+</div>
+
+<!-- <h3 mat-dialog-title>Confirm to approve the order </h3>
+    <div mat-dialog-content>order id : </div>
+    <div mat-dialog-actions>
+        <button mat-button mat-dialog-close (click)="orderApproved()">Approve</button>
+        <button mat-button mat-dialog-close (click)="Goback()">Close</button>
+    </div>
+</div> -->

@@ -1,0 +1,28 @@
+
+.product-form{
+    width: 70%;
+    text-align: center;
+    padding:5%;
+}
+
+h2 {
+    text-align: center;
+}
+
+form {
+    margin-top: 100px;
+}
+.mat-form-field{
+    width: 100%;
+    margin-left:40px;
+}
+
+.mat-raised-button {
+    float: right;
+    width: 200px;
+    margin-right:100px;
+}
+
+.update-btn{
+    float: right;
+}

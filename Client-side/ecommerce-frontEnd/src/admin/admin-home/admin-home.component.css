@@ -1,0 +1,32 @@
+.add-product {
+    width: 150px;
+    margin-left: 30px;
+    margin-top: 70px;
+}
+
+.mat-form-field{
+    margin-left: 30px;
+}
+
+
+aside,
+section,
+footer {
+    box-sizing: border-box;
+}
+
+aside {
+    /* width: 20%; */
+    float: left;
+}
+
+section {
+    /* width: 60%; */
+    float: left;
+    background-image: url("https://th.bing.com/th/id/OIP.QhIoFTlThse0mSiolLUpcQHaEK?pid=ImgDet&rs=1");
+    /* height: 100px; */
+}
+
+footer {
+    clear: both;
+}

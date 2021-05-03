@@ -1,0 +1,24 @@
+.parent{
+   width: 100%;
+    text-align: center;
+}
+
+.example-card {
+    width: 40%;
+    margin-left:30%;
+    margin-right: 30%;
+    margin-bottom: 10%;
+
+}
+
+.example-header-image {
+    background-size: cover;
+}
+
+section {
+    float: left;
+}
+
+aside {
+    float: left;
+}

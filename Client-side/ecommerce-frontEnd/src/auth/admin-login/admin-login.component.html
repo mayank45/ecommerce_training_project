@@ -1,0 +1,66 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <div class="row between-xs middle-xs header-row">
+            <nav>
+                <a mat-button (click)="redirectToLogin()">Go Back </a>
+            </nav>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<header></header>
+<aside id="leftBar"></aside>
+
+
+<div class="box">
+    <section>
+        <aside></aside>
+        <div class="row center-xs">
+            <div class="box" id="loginbox">
+                <form [formGroup]="adminloginForm">
+                    <mat-card>
+                        <mat-card-header>
+                            <mat-card-title>Login</mat-card-title>
+                        </mat-card-header>
+                        <mat-card-content>
+                            <div class="row">
+                                <div class="col-xs">
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>User name</mat-label>
+                                        <input id="sessionmail" autocomplete="off" formControlName="email" matInput type="text">
+                                        <span mat-icon-button matSuffix>
+                    <mat-icon>person</mat-icon>
+                  </span>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs">
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>Enter your password</mat-label>
+                                        <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+                                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                            
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </button>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                        <mat-card-actions>
+                            <button [disabled]="adminloginForm.invalid" mat-raised-button color="accent" type="submit" (click)="adminlogin()">Login</button>
+                            <button [disabled]="adminloginForm.invalid" mat-raised-button type="button" (click)="cancel()">Cancel</button>
+                        </mat-card-actions>
+                    </mat-card>
+                </form>
+            </div>
+
+        </div>
+
+
+
+
+    </section>
+    <aside id="rightBar"></aside>
+    <footer></footer>
+</div>

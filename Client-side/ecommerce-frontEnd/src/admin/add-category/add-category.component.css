@@ -1,0 +1,25 @@
+.parent{
+    width: 80%;
+    margin: 10%;
+   
+}
+
+#div-top{
+    display: inline;
+}
+#cat-list li {
+    display:inline;
+
+}
+
+
+.add-category{
+    
+    width: 150px;
+    height: 50px;
+}
+
+.back-btn{
+    margin-top:20px;
+    float: right;
+}

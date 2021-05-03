@@ -1,0 +1,27 @@
+<admin-header></admin-header>
+<aside></aside>
+
+<section>
+    <a mat-raised-button color="primary" class="add-product" [routerLink]="'/../admin/addproduct'">Add Product</a>
+    
+   
+    
+        <label style="margin-left: 30px;">Select Category</label>
+        <select style="margin-left: 20px;" (change)="getSelectedCategory($event)">
+            <option>All</option>
+            <option *ngFor="let category of categories" [value]="category.categoryName">
+                {{category.categoryName}}
+            </option>
+        </select>
+    
+
+    <div class="product-grid">
+
+        <app-product-card *ngFor="let product of products" [product]="product"></app-product-card>
+        <!-- <a mat-raised-button color="primary" class="add-product" (click)="goToProductDetails">Product Details</a>
+        <a mat-raised-button color="primary" class="add-product" (click)="goToEditProduct">Add Product</a> -->
+    </div>
+
+</section>
+<aside></aside>
+<footer></footer>

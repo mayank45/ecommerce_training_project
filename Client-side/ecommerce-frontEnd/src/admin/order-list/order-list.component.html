@@ -1,0 +1,26 @@
+<admin-header></admin-header>
+
+<br/>
+<button mat-raised-button color="primary" class="back-button" [routerLink]=" '/../admin/home' ">Back</button>
+<br/>
+<div class="parent">
+    <h2>All Orders</h2>
+    <br>
+    <p *ngIf="!flag">No orders placed yet !!</p>
+    <table *ngIf="flag">
+        <tr>
+            <th>Customer Id</th>
+            <th>Order Id</th>
+            <th>Order Date</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+        <tr *ngFor="let order of orders">
+            <td>{{ order.customerid }}</td>
+            <td>{{ order.orderid }}</td>
+            <td>{{ order.dateOfOrder | date: "dd-MMM-yyyy" }}</td>
+            <td>{{ order.status }}</td>
+            <td><button mat-raised-button color="primary" (click)="viewOrderDetails(order.orderid)">View Order Details</button></td>
+        </tr>
+    </table>
+</div>

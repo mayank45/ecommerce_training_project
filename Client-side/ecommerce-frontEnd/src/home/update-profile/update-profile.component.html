@@ -1,0 +1,85 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <div class="row between-xs middle-xs header-row">
+            <nav>
+                <a mat-button [routerLink]="'/../home/profile'">Go Back </a>
+
+
+
+            </nav>
+
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+
+<header></header>
+
+<aside id="leftBar"></aside>
+<section>
+
+    <div class="row center-xs">
+        <div class="box">
+            <form (ngSubmit)="update()" [formGroup]="updateProfileForm">
+                <aside></aside>
+                <mat-card>
+                    <mat-card-header>
+                        <mat-card-title>Update your profile</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+
+                        <div class="row">
+
+                            <div class="col">
+                                <mat-form-field appearance="standard">
+                                    <mat-label>Email Id</mat-label>
+                                    <input autocomplete="off" formControlName="email" matInput type="text">
+
+                                </mat-form-field>
+                            </div>
+
+
+                            <div class="col">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Name</mat-label>
+                                    <input autocomplete="off" formControlName="customer_name" matInput type="text">
+
+                                </mat-form-field>
+                            </div>
+
+
+                            <div class="col">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Address</mat-label>
+                                    <input autocomplete="off" formControlName="address" matInput type="text">
+
+                                </mat-form-field>
+                            </div>
+
+
+                            <div class="col">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Phone Number</mat-label>
+                                    <input autocomplete="off" formControlName="phno" matInput type="text">
+
+                                </mat-form-field>
+                            </div>
+                            </div>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button [disabled]="updateProfileForm.invalid" mat-raised-button color="accent"
+                            type="submit">Update Profile</button>
+                        <button [disabled]="updateProfileForm.invalid" mat-raised-button type="button"
+                            (click)="cancel()">Cancel</button>
+                    </mat-card-actions>
+                </mat-card>
+            </form>
+        </div>
+
+    </div>
+
+
+
+
+</section>
+<aside id="rightBar"></aside>

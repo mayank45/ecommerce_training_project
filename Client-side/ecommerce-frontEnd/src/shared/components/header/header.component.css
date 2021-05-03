@@ -1,0 +1,42 @@
+nav>a {
+    padding: 10px;
+    text-decoration: none;
+}
+
+mat-sidenav {
+    width: 300px;
+}
+
+h3 {
+    padding: 10px;
+}
+
+nav>a.active {
+    background-color: white;
+    color: black;
+}
+
+.header-row {
+    width: 100%;
+}
+
+.fill-space {
+    flex: 1 1 auto;
+}
+
+.example-container {
+    width: 300px;
+    height: 30px;
+    /* border: 1px solid rgba(0, 0, 0, 0.5); */
+}
+
+.example-sidenav-content {
+    display: flex;
+    height: 100%;
+    align-items: left;
+    justify-content: center;
+}
+
+.example-sidenav {
+    padding: 20px;
+}

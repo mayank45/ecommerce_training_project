@@ -1,0 +1,51 @@
+.parent {
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+th {
+    background-color: #3f51b5;
+    border: 1px solid #3f51b5;
+    color: white;
+}
+
+td {
+    border: 1px solid #dddddd;
+}
+
+td,
+th {
+    text-align: center;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+aside,
+section,
+footer {
+    box-sizing: border-box;
+}
+
+aside {
+    /* width: 20%; */
+    float: left;
+}
+
+section {
+    /* width: 60%; */
+    float: left;
+    /* height: 100px; */
+}
+
+footer {
+    clear: both;
+}
